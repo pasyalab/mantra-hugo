@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html {{ if .Site.Params.opengraph }} prefix="og: http://ogp.me/ns#" {{ end }}>
+
+<head>
+    {{ partial "post-head.html" . }}
+</head>
+
+<body class="page-single">
+    <div class="site">
+        {{ partial "header.html" . }}
+        {{ partial "content.html" . }}
+        {{ partial "footer.html" . }}
+    </div>
+    <script src="{{ .Site.BaseURL }}assets/vendor/twbs/js/bootstrap.min.js"></script>
+    <!-- <script src="{{ .Site.BaseURL }}assets/vendor/prism/prism.js"></script> -->
+    <script src="{{ .Site.BaseURL }}assets/js/app.js"></script>
+</body>
+
+</html>
+<!-- 
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        {{ partial "post-header.html" . }}
+
+        {{ partial "post-content.html" . }}
+
+        {{ partial "post-footer.html" . }}
+
+        {{ partial "disqus.html" . }}
+    </article>
+</div> -->
+<!-- {{ partial "footer.html" . }} -->

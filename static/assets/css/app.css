@@ -1,0 +1,25 @@
+/* reboot */
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.rich-post {
+	margin-top: 64px;
+}
+
+.rich-post .post-sidebar {
+	width: 265px;
+}
+.rich-post .post-wrap {
+	width: calc(100% - 265px);
+}
+
+.rich-post .post {
+	margin: auto;
+	max-width: 800px;
+}
+
+.post .highlight pre {
+	padding: 1.5rem;
+}

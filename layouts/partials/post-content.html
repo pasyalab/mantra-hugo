@@ -1,0 +1,46 @@
+<div class="rich-post">
+    <div class="post-layer d-flex flex-wrap">
+        <aside class="post-sidebar">
+        	{{ partial "widget-latest-post.html" . }}
+            <section class="widget">
+                <div class="body">
+                    <ol class="post-list">
+                       
+                    </ol>
+                </div>
+            </section>
+        </aside>
+        <div class="post-wrap">
+            <article class="post" itemscope="" itemtype="https://schema.org/CreativeWork">
+                <header>
+                    <h1 class="post-title" itemprop="headline">{{ .Title }}</h1>
+                    {{ if .Description }}
+                    <p class="post-description" itemprop="description">{{ .Description }}</p>
+                    {{ end }}
+                    <p class="post-date{{ if not .Site.Params.readingTime }} post-line{{ end }}">
+                        <span><time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time></span>
+                        <span>by</span>
+                        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+                            <span itemprop="name">
+                                <a href="{{ .Params.profile | default .Site.Author.profile | default "#" }}" itemprop="url" rel="author">{{ .Params.author | default .Site.Author.name }}</a>
+                            </span>
+                        </span>
+                    </p>
+                    {{ if .Site.Params.readingTime }}
+                    <p class="post-reading post-line">
+                        <span>{{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min</span>
+                    </p>
+                    {{ end }}
+                </header>
+                <div class="post-content">
+                    <div class="post-content clearfix" itemprop="text">
+                        {{ with .Params.Featured_Image }}
+                        <img class="post-featured-image" src="{{ . }}" />
+                        {{ end }} {{ .Content }}
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+<!-- .rich-post -->

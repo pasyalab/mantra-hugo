@@ -1,0 +1,8 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+<meta name="robots" content="no-index,follow" />
+{{ if .Site.Params.opengraph }}{{ partial "opengraph.html" . }}{{ end }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/app.css" />

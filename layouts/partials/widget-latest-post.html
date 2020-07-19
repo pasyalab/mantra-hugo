@@ -1,0 +1,15 @@
+<section class="widget">
+    <div class="body">
+        <ol class="post-list">
+            {{ range first 10 .Pages }}
+            <li>
+                <!-- this <div> includes the title summary -->
+                <div>
+                    <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+                    {{ .Summary }}
+                </div>
+            </li>
+            {{ end }}
+        </ol>
+    </div>
+</section>
