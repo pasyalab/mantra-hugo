@@ -1,2 +1,2 @@
-# mantra-hugo
+# mantra
 Hugo starter template
